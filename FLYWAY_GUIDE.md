@@ -56,8 +56,10 @@ spring.datasource.username=postgres
 spring.datasource.password=postgres
 spring.datasource.driver-class-name=org.postgresql.Driver
 
-spring.flyway.enabled=true
-spring.flyway.baseline-on-migrate=true
+spring.flyway.url=jdbc:postgresql://localhost:5432/course-management
+spring.flyway.user=postgres
+spring.flyway.password=postgres
+spring.flyway.schemas=public
 ```
 
 ### Note:
