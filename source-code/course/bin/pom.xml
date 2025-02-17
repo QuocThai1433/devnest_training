@@ -27,7 +27,7 @@
 		<url/>
 	</scm>
 	<properties>
-		<java.version>21</java.version>
+		<java.version>23</java.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -59,15 +59,6 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-		<!--Add postgres jdbc driver-->
-		<dependency>
-    		<groupId>org.postgresql</groupId>
-   			 <artifactId>postgresql</artifactId>
-		</dependency>
-		<dependency>
-    		<groupId>org.flywaydb</groupId>
-   			 <artifactId>flyway-database-postgresql</artifactId>
-		</dependency>
 	</dependencies>
 
 	<build>
@@ -96,17 +87,6 @@
 					</excludes>
 				</configuration>
 			</plugin>
-			<plugin>
-    			<groupId>org.flywaydb</groupId>
-    			<artifactId>flyway-maven-plugin</artifactId>
-    			<configuration>
-    				<url>jdbc:postgresql://localhost:5432/course-management</url>
-        			<user>postgres</user>
-        			<password>postgres</password>
-        			<schemas>public</schemas>
-    			</configuration>
-			</plugin>
-
 		</plugins>
 	</build>
 
