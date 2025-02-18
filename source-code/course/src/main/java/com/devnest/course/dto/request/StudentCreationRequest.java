@@ -1,8 +1,8 @@
 package com.devnest.course.dto.request;
 
-import lombok.Getter;
+//import lombok.Getter;
 
-@Getter
+//@Getter
 public class StudentCreationRequest {
 
 }

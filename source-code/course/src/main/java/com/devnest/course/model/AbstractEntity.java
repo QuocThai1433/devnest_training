@@ -30,8 +30,6 @@ public abstract class AbstractEntity<T> {
     T id;
 
     @Column(name = "created_by", length = 255)
-    @Temporal(TemporalType.TIMESTAMP)
-    @CreationTimestamp
     String createdBy;
     
     @Column(name = "created_date", length = 255)
