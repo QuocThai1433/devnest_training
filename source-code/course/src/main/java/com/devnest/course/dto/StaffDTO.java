@@ -44,6 +44,6 @@ public class StaffDTO {
     @Size(max = 1000, message = "Description cannot exceed 1000 characters")
     String description;
 
-    StaffAccountDTO staffAccount;
+//    StaffAccountDTO staffAccount;
 
 }

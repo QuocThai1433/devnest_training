@@ -49,5 +49,5 @@ public class TeacherDTO {
     String updatedBy;
     Date updatedDate;
 
-    TeacherAccountDTO teacherAccount;
+//    TeacherAccountDTO teacherAccount;
 }

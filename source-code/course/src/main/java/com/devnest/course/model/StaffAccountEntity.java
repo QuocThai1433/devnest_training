@@ -8,12 +8,14 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import lombok.AccessLevel;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.experimental.FieldDefaults;
 
 @Getter
 @Setter
+@Builder
 @Entity
 @Table(name = "tbl_staff_account")
 @FieldDefaults(level = AccessLevel.PRIVATE)
