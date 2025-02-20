@@ -11,3 +11,6 @@ CREATE TABLE TBL_STAFF_ACCOUNT (
     updated_date TIMESTAMP,
     CONSTRAINT fk_staff FOREIGN KEY (staff_id) REFERENCES tbl_staff(id) ON DELETE CASCADE
 );
+
+
+
