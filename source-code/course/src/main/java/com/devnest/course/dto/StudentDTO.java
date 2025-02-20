@@ -24,8 +24,6 @@ import lombok.experimental.FieldDefaults;
 @NoArgsConstructor
 @AllArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
-@ToString
-@Data
 public class StudentDTO {
 	Long id;
 

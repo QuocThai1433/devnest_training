@@ -56,6 +56,7 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
+            <version>${org.projectlombok.version}</version>
             <optional>true</optional>
         </dependency>
         <dependency>
@@ -99,6 +100,7 @@
                         <path>
                             <groupId>org.projectlombok</groupId>
                             <artifactId>lombok</artifactId>
+                            <version>${org.projectlombok.version}</version>
                         </path>
                         <path>
                             <groupId>org.projectlombok</groupId>
@@ -126,7 +128,7 @@
                 <configuration>
                     <url>jdbc:postgresql://localhost:5432/course-management</url>
                     <user>postgres</user>
-                    <password>123456</password>
+                    <password>postgres</password>
                     <schemas>public</schemas>
                 </configuration>
             </plugin>
