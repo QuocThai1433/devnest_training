@@ -11,3 +11,5 @@ CREATE TABLE TBL_STAFF (
     updated_by VARCHAR(255),
     updated_date TIMESTAMP
 );
+
+
