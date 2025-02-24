@@ -1,6 +1,8 @@
 package com.devnest.apigateway.service;
 
-import com.devnest.apigateway.dto.IntrospectDTO;
+import com.devnest.apigateway.dto.ApiResponse;
+import com.devnest.apigateway.dto.request.IntrospectRequest;
+import com.devnest.apigateway.dto.response.IntrospectResponse;
 import com.devnest.apigateway.repository.IdentityClient;
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
@@ -14,10 +16,9 @@ import reactor.core.publisher.Mono;
 public class IdentityService {
     IdentityClient identityClient;
 
-    public Mono<IntrospectDTO> introspect(String token){
-        return identityClient.introspect(IntrospectDTO.builder()
+    public Mono<ApiResponse<IntrospectResponse>> introspect(String token){
+        return identityClient.introspect(IntrospectRequest.builder()
                 .token(token)
                 .build());
     }
-
 }

@@ -4,6 +4,7 @@ import com.devnest.apigateway.service.IdentityService;
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
 import lombok.experimental.FieldDefaults;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.cloud.gateway.filter.GatewayFilterChain;
 import org.springframework.cloud.gateway.filter.GlobalFilter;
 import org.springframework.core.Ordered;
@@ -18,6 +19,7 @@ import reactor.core.publisher.Mono;
 import java.util.Arrays;
 import java.util.List;
 
+@Slf4j
 @Component
 @RequiredArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
@@ -41,31 +43,20 @@ public class AuthenticationFilter implements GlobalFilter, Ordered {
         }
 
         String token = authHeader.getFirst().replace("Bearer ", "");
+        log.info("token: {}", token);
 
-        return identityService.introspect(token)
-                .flatMap(introspectResponse -> {
-                    if (introspectResponse.isValid()) {
-                        if (path.contains("/api/v1/auth/login")) {
-                            return redirectToCourseService(exchange);
-                        }
-                        return chain.filter(exchange);
-                    } else {
-                        return unAuthenticated(exchange.getResponse());
-                    }
-                })
-                .onErrorResume(throwable -> unAuthenticated(exchange.getResponse()));
+        return identityService.introspect(token).flatMap(introspectResponse -> {
+            if (introspectResponse.getResult().isValid())
+                return chain.filter(exchange);
+            else
+                return unAuthenticated(exchange.getResponse());
+        }).onErrorResume(throwable -> unAuthenticated(exchange.getResponse()));
+
     }
 
     private boolean isPublicApi(String path) {
         return PUBLIC_APIS.stream()
                 .anyMatch(path::startsWith);
-    }
-
-    private Mono<Void> redirectToCourseService(ServerWebExchange exchange) {
-        ServerHttpResponse response = exchange.getResponse();
-        response.setStatusCode(HttpStatus.TEMPORARY_REDIRECT);
-        response.getHeaders().set(HttpHeaders.LOCATION, "http://localhost:8081/api/v1/course");
-        return response.setComplete();
     }
 
     private Mono<Void> unAuthenticated(ServerHttpResponse response) {
@@ -76,6 +67,6 @@ public class AuthenticationFilter implements GlobalFilter, Ordered {
 
     @Override
     public int getOrder() {
-        return 0;
+        return -1;
     }
 }
