@@ -1,6 +1,9 @@
 package com.devnest.apigateway.config;
 
+import com.devnest.apigateway.dto.ApiResponse;
 import com.devnest.apigateway.service.IdentityService;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
 import lombok.experimental.FieldDefaults;
@@ -10,6 +13,7 @@ import org.springframework.cloud.gateway.filter.GlobalFilter;
 import org.springframework.core.Ordered;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.server.reactive.ServerHttpResponse;
 import org.springframework.stereotype.Component;
 import org.springframework.util.CollectionUtils;
@@ -25,9 +29,11 @@ import java.util.List;
 @FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
 public class AuthenticationFilter implements GlobalFilter, Ordered {
     IdentityService identityService;
+    ObjectMapper objectMapper;
     private static final List<String> PUBLIC_APIS = Arrays.asList(
             "/api/v1/auth/login",
-            "/api/v1/auth/register"
+            "/api/v1/auth/register",
+            "/api/v1/auth/refresh-token"
     );
 
     @Override
@@ -59,11 +65,26 @@ public class AuthenticationFilter implements GlobalFilter, Ordered {
                 .anyMatch(path::startsWith);
     }
 
-    private Mono<Void> unAuthenticated(ServerHttpResponse response) {
-        String body = "Unauthenticated";
+    Mono<Void> unAuthenticated(ServerHttpResponse response){
+        ApiResponse<?> apiResponse = ApiResponse.builder()
+                .code(1401)
+                .message("Unauthenticated")
+                .build();
+
+        String body = null;
+        try {
+            body = objectMapper.writeValueAsString(apiResponse);
+        } catch (JsonProcessingException e) {
+            throw new RuntimeException(e);
+        }
+
         response.setStatusCode(HttpStatus.UNAUTHORIZED);
-        return response.writeWith(Mono.just(response.bufferFactory().wrap(body.getBytes())));
+        response.getHeaders().add(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE);
+
+        return response.writeWith(
+                Mono.just(response.bufferFactory().wrap(body.getBytes())));
     }
+
 
     @Override
     public int getOrder() {

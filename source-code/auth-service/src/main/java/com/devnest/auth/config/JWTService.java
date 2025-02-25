@@ -78,7 +78,7 @@ public class JWTService {
         return (extractUsername(token).equals(username) && !isTokenExpired(token));
     }
 
-    private boolean isTokenExpired(String token) {
+    public boolean isTokenExpired(String token) {
         return extractClaim(token, Claims::getExpiration).before(new Date());
     }
 //    public boolean introspect(IntrospectRequest request) throws ParseException {
