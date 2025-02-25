@@ -10,5 +10,5 @@ import reactor.core.publisher.Mono;
 
 public interface IdentityClient {
     @PostExchange(url = "/auth/introspect", contentType = MediaType.APPLICATION_JSON_VALUE)
-    Mono<ApiResponse<IntrospectResponse>> introspect(@RequestBody IntrospectRequest request);
+    Mono<IntrospectResponse> introspect(@RequestBody IntrospectRequest request);
 }

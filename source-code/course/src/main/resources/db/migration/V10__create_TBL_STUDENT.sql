@@ -1,5 +1,5 @@
 CREATE TABLE tbl_student (
-    id BIGINT PRIMARY KEY,
+    id BIGSERIAL PRIMARY KEY,
     date_birth DATE NOT NULL,
     state VARCHAR(50) NOT NULL,
     city VARCHAR(100) NOT NULL,

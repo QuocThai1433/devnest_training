@@ -1,5 +1,5 @@
 CREATE TABLE TBL_CATEGORY (
-    id BIGINT PRIMARY KEY,
+    id BIGSERIAL PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
     description TEXT,
     created_by VARCHAR(255) NOT NULL,

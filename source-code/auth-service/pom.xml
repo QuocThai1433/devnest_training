@@ -41,15 +41,12 @@
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-<<<<<<< HEAD
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
 		</dependency>
 
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-=======
->>>>>>> 34ed2136eb12cd3547843651f494f61b30a2782c
 			<artifactId>spring-boot-devtools</artifactId>
 			<scope>runtime</scope>
 			<optional>true</optional>
@@ -69,7 +66,7 @@
 			<artifactId>spring-security-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-<<<<<<< HEAD
+
 		<dependency>
 			<groupId>io.jsonwebtoken</groupId>
 			<artifactId>jjwt-api</artifactId>
@@ -113,8 +110,7 @@
 			<artifactId>hibernate-core</artifactId>
 			<version>6.3.1.Final</version>
 		</dependency>
-=======
->>>>>>> 34ed2136eb12cd3547843651f494f61b30a2782c
+
 	</dependencies>
 
 	<build>
@@ -143,7 +139,7 @@
 					</excludes>
 				</configuration>
 			</plugin>
-<<<<<<< HEAD
+
 			<plugin>
 				<groupId>org.flywaydb</groupId>
 				<artifactId>flyway-maven-plugin</artifactId>
@@ -155,8 +151,7 @@
 				</configuration>
 			</plugin>
 
-=======
->>>>>>> 34ed2136eb12cd3547843651f494f61b30a2782c
+
 		</plugins>
 	</build>
 

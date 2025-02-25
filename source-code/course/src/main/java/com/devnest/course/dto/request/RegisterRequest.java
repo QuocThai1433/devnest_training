@@ -1,9 +1,8 @@
-package com.devnest.auth.dto.request;
-
-import lombok.*;
+package com.devnest.course.dto.request;
 
 import java.util.Date;
 
+import lombok.*;
 
 @Getter
 @Setter

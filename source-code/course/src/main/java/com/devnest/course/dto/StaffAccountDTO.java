@@ -11,6 +11,8 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.FieldDefaults;
 
+import java.util.Date;
+
 @Getter
 @Setter
 @Builder
@@ -33,5 +35,9 @@ public class StaffAccountDTO {
 
     @Size(max = 1000, message = "Description cannot exceed 1000 characters")
     String description;
+    String createdBy;
+    Date createdDate;
+    String updatedBy;
+    Date updatedDate;
 
 }
