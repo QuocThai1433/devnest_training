@@ -43,6 +43,12 @@ public class AuthenticationFilter implements GlobalFilter, Ordered {
             return chain.filter(exchange);
         }
 
+        // Bỏ qua xác thực nếu request có header "X-Internal-Call: true"
+        String internalCall = exchange.getRequest().getHeaders().getFirst("X-Internal-Call");
+        if ("true".equalsIgnoreCase(internalCall)) {
+            return chain.filter(exchange);
+        }
+
         List<String> authHeader = exchange.getRequest().getHeaders().get(HttpHeaders.AUTHORIZATION);
         if (CollectionUtils.isEmpty(authHeader)) {
             return unAuthenticated(exchange.getResponse());

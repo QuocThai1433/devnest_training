@@ -3,6 +3,7 @@ package com.devnest.auth.service;
 import com.devnest.auth.dto.response.AuthCourseResponseDTO;
 import com.devnest.auth.repository.CustomUserDetails;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.http.*;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -26,15 +27,30 @@ public class CustomUserDetailService implements UserDetailsService {
     }
 
     public UserDetails loadUserByUsernameAndRole(String username, String role) throws UsernameNotFoundException {
-        String url = "http://course/api/v1//course/internal/user?username=" + username + "&role=" + role;
+        String url = "http://api-gateway/api/v1/course/internal/user?username=" + username + "&role=" + role;
 
         try {
-            AuthCourseResponseDTO response = restTemplate.getForObject(url, AuthCourseResponseDTO.class);
-            if (response == null) throw new UsernameNotFoundException("User không tồn tại");
+            HttpHeaders headers = new HttpHeaders();
+            headers.setContentType(MediaType.APPLICATION_JSON);
+            headers.set("X-Internal-Call", "true"); // ✅ Đánh dấu request nội bộ từ auth-service
 
-            return new CustomUserDetails(response);
+            HttpEntity<Void> requestEntity = new HttpEntity<>(headers);
+
+            ResponseEntity<AuthCourseResponseDTO> response = restTemplate.exchange(
+                    url,
+                    HttpMethod.GET,
+                    requestEntity,
+                    AuthCourseResponseDTO.class
+            );
+
+            if (!response.getStatusCode().is2xxSuccessful() || response.getBody() == null) {
+                throw new UsernameNotFoundException("User không tồn tại");
+            }
+
+            return new CustomUserDetails(response.getBody());
         } catch (RestClientException e) {
             throw new UsernameNotFoundException("Lỗi khi gọi course-service: " + e.getMessage());
         }
     }
+
 }

@@ -7,9 +7,7 @@ import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
 import lombok.experimental.FieldDefaults;
 import lombok.experimental.NonFinal;
-import org.springframework.http.HttpEntity;
-import org.springframework.http.HttpMethod;
-import org.springframework.http.ResponseEntity;
+import org.springframework.http.*;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
@@ -23,7 +21,7 @@ public class AuthService {
     JWTService jwtService;
 
     @NonFinal
-    String URL = "http://course/api/v1/course/internal/register";
+    String URL = "http://api-gateway/api/v1/course/internal/register";
 
     /**
      * Đăng ký người dùng mới
@@ -52,8 +50,11 @@ public class AuthService {
             courseRequest.setPosition(request.getPosition());
         }
 
-//        String url = "http://course/api/v1/course/internal/register";
-        HttpEntity<RegisterRequest> requestEntity = new HttpEntity<>(courseRequest);
+        HttpHeaders headers = new HttpHeaders();
+        headers.setContentType(MediaType.APPLICATION_JSON);
+        headers.set("X-Internal-Call", "true"); // ✅ Đánh dấu đây là request nội bộ từ auth-service
+
+        HttpEntity<RegisterRequest> requestEntity = new HttpEntity<>(courseRequest, headers);
         ResponseEntity<String> courseResponse = restTemplate.exchange(
                 URL,
                 HttpMethod.POST,
