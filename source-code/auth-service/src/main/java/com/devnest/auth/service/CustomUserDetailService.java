@@ -26,7 +26,7 @@ public class CustomUserDetailService implements UserDetailsService {
     }
 
     public UserDetails loadUserByUsernameAndRole(String username, String role) throws UsernameNotFoundException {
-        String url = "http://localhost:8081/api/v1/course/internal/user?username=" + username + "&role=" + role;
+        String url = "http://course/api/v1//course/internal/user?username=" + username + "&role=" + role;
 
         try {
             AuthCourseResponseDTO response = restTemplate.getForObject(url, AuthCourseResponseDTO.class);

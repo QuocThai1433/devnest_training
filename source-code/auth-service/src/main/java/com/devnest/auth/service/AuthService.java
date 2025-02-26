@@ -6,6 +6,7 @@ import com.devnest.auth.dto.response.RegisterResponse;
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
 import lombok.experimental.FieldDefaults;
+import lombok.experimental.NonFinal;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
@@ -20,6 +21,9 @@ public class AuthService {
     RestTemplate restTemplate;
     PasswordEncoder passwordEncoder;
     JWTService jwtService;
+
+    @NonFinal
+    String URL = "http://course/api/v1/course/internal/register";
 
     /**
      * Đăng ký người dùng mới
@@ -48,10 +52,10 @@ public class AuthService {
             courseRequest.setPosition(request.getPosition());
         }
 
-        String url = "http://localhost:8081/api/v1/course/internal/register";
+//        String url = "http://course/api/v1/course/internal/register";
         HttpEntity<RegisterRequest> requestEntity = new HttpEntity<>(courseRequest);
         ResponseEntity<String> courseResponse = restTemplate.exchange(
-                url,
+                URL,
                 HttpMethod.POST,
                 requestEntity,
                 String.class

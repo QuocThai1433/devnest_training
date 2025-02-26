@@ -56,6 +56,7 @@ public class AuthController {
         }
     }
 
+    // API đăng ký người dùng
     @PostMapping("/register")
     public ResponseEntity<?> register(@RequestBody RegisterRequest request) {
         try {
