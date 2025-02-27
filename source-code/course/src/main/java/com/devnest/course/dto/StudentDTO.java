@@ -1,7 +1,6 @@
 package com.devnest.course.dto;
 
 
-import java.sql.Date;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -17,6 +16,8 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 import lombok.experimental.FieldDefaults;
+
+import java.util.Date;
 
 @Getter
 @Setter
@@ -51,7 +52,15 @@ public class StudentDTO {
 
     @NotBlank(message = "Last name is required")
     String lastName;
-    
+
+    @NotBlank(message = "Email is required")
+    String email;
+
+    @NotBlank(message = "Phone is required")
+    String phone;
+
+    String description;
+
     String createdBy;
     Date createdDate;
     String updatedBy;

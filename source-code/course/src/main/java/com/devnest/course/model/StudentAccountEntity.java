@@ -6,14 +6,14 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
-import lombok.AccessLevel;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 import lombok.experimental.FieldDefaults;
 
 @Getter
 @Setter
 @Entity
+@NoArgsConstructor
+@AllArgsConstructor
 @Table(name = "tbl_student_account")
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class StudentAccountEntity extends AbstractEntity<Long>{
@@ -33,5 +33,4 @@ public class StudentAccountEntity extends AbstractEntity<Long>{
 
     @Column(name = "description", columnDefinition = "TEXT")
     String description;
-
 }

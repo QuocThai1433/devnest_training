@@ -7,14 +7,14 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
-import lombok.AccessLevel;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 import lombok.experimental.FieldDefaults;
 
 @Getter
 @Setter
 @Entity
+@NoArgsConstructor
+@AllArgsConstructor
 @Table(name = "tbl_teacher")
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class TeacherEntity extends AbstractEntity<Long>{
@@ -37,19 +37,7 @@ public class TeacherEntity extends AbstractEntity<Long>{
     @Column(name = "description", columnDefinition = "TEXT")
     String description;
 
-    @Column(name = "created_by", length = 50, nullable = false)
-    String createdBy;
-
-    @Column(name = "created_date", nullable = false)
-    Date createdDate;
-
-    @Column(name = "updated_by", length = 50)
-    String updatedBy;
-
-    @Column(name = "updated_date")
-    Date updatedDate;
 
     @OneToOne(mappedBy = "teacherEntity", cascade = CascadeType.ALL)
     TeacherAccountEntity teacherAccount;
-
 }

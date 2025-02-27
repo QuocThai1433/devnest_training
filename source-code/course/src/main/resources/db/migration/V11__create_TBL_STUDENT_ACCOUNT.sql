@@ -1,5 +1,5 @@
 CREATE TABLE tbl_student_account (
-    id BIGINT PRIMARY KEY,
+    id BIGSERIAL PRIMARY KEY,
     student_id BIGINT NOT NULL,
     login_name VARCHAR(50) NOT NULL,
     password VARCHAR(255) NOT NULL,

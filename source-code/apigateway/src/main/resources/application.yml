@@ -7,7 +7,21 @@ spring:
   cloud:
     gateway:
       routes:
-        - id: course-service
-          uri: http://localhost:8080
+        - id: auth-service
+          uri: lb://auth-service
           predicates:
-            - Path=/course/**
+            - Path=/api/v1/auth/**
+
+        - id: course-service
+          uri: lb://COURSE
+          predicates:
+            - Path=/api/v1/course/**
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+    register-with-eureka: true
+    fetch-registry: true

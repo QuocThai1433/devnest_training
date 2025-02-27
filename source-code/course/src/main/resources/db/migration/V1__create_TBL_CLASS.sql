@@ -1,5 +1,5 @@
 CREATE TABLE tbl_class (
-    id BIGINT PRIMARY KEY,
+    id BIGSERIAL PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
     start_date DATE NOT NULL,
     end_date DATE NOT NULL,
