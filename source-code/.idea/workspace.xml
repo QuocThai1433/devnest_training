@@ -5,34 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="06e3bd83-0701-41c3-a511-6c79e7b9c842" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/database-service/src/main/resources/db/migration/V10__create_TBL_STUDENT.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database-service/src/main/resources/db/migration/V11__create_TBL_STUDENT_ACCOUNT.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database-service/src/main/resources/db/migration/V12__create_TBL_TEACHER.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database-service/src/main/resources/db/migration/V13__create_TBL_TEACHER_ACCOUNT.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database-service/src/main/resources/db/migration/V14__create_TBL_LANGUAGE.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database-service/src/main/resources/db/migration/V1__create_TBL_CLASS.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database-service/src/main/resources/db/migration/V2__create_TBL_CLASS_STUDENT.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database-service/src/main/resources/db/migration/V3__create_TBL_CLASS_WEEKDAY.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database-service/src/main/resources/db/migration/V4__create_TBL_WEEKDAY.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database-service/src/main/resources/db/migration/V5__create_TBL_COURSE.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database-service/src/main/resources/db/migration/V6__create_TBL_CATEGORY.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database-service/src/main/resources/db/migration/V7__create_TBL_LEVEL.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database-service/src/main/resources/db/migration/V8__create_TBL_STAFF.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database-service/src/main/resources/db/migration/V9__create_TBL_STAFF_ACCOUNT.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/common-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/common-service/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/database-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/database-service/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/devnest/user/UserServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/devnest/user/UserServiceApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/devnest/user/config/LocaleResolver.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/devnest/user/config/Translator.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/devnest/user/controller/TestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/devnest/user/controller/TestController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/resources/message_en.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/resources/message_vi.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common-service/src/main/java/com/devnest/common/config/Translator.java" beforeDir="false" afterPath="$PROJECT_DIR$/common-service/src/main/java/com/devnest/common/config/Translator.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,7 +38,7 @@
     "Maven.user-service [install].executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "Merging develop__common__message__validation",
+    "git-widget-placeholder": "develop__common__message__validation",
     "kotlin-language-version-configured": "true"
   }
 }]]></component>
