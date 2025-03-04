@@ -1,4 +1,4 @@
-package com.devnest.user.config;
+package com.devnest.common.config;
 
 import java.util.List;
 import java.util.Locale;

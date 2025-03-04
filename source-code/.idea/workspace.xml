@@ -4,46 +4,99 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="75d2bf9a-c491-4d20-8213-4aad79ec80ac" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/api-gateway-server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway-server/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apigateway/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/apigateway/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apigateway/src/main/java/com/devnest/apigateway/config/AuthenticationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/apigateway/src/main/java/com/devnest/apigateway/config/AuthenticationFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apigateway/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/apigateway/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth-service/src/main/java/com/devnest/auth/service/AuthService.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main/java/com/devnest/auth/service/AuthService.java" afterDir="false" />
+    <list default="true" id="06e3bd83-0701-41c3-a511-6c79e7b9c842" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/database-service/src/main/resources/db/migration/V10__create_TBL_STUDENT.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database-service/src/main/resources/db/migration/V11__create_TBL_STUDENT_ACCOUNT.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database-service/src/main/resources/db/migration/V12__create_TBL_TEACHER.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database-service/src/main/resources/db/migration/V13__create_TBL_TEACHER_ACCOUNT.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database-service/src/main/resources/db/migration/V14__create_TBL_LANGUAGE.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database-service/src/main/resources/db/migration/V1__create_TBL_CLASS.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database-service/src/main/resources/db/migration/V2__create_TBL_CLASS_STUDENT.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database-service/src/main/resources/db/migration/V3__create_TBL_CLASS_WEEKDAY.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database-service/src/main/resources/db/migration/V4__create_TBL_WEEKDAY.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database-service/src/main/resources/db/migration/V5__create_TBL_COURSE.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database-service/src/main/resources/db/migration/V6__create_TBL_CATEGORY.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database-service/src/main/resources/db/migration/V7__create_TBL_LEVEL.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database-service/src/main/resources/db/migration/V8__create_TBL_STAFF.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database-service/src/main/resources/db/migration/V9__create_TBL_STAFF_ACCOUNT.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/common-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/common-service/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/database-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/database-service/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/devnest/user/UserServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/devnest/user/UserServiceApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/devnest/user/config/LocaleResolver.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/devnest/user/config/Translator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/devnest/user/controller/TestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/devnest/user/controller/TestController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/resources/message_en.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/resources/message_vi.properties" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 2
+  &quot;associatedIndex&quot;: 5
 }</component>
-  <component name="ProjectId" id="2tVyY0uhjB7dl6FDlGGIzg7b7ej" />
+  <component name="ProjectId" id="2tqFIhnsgw8eEVUJp6yn3gRX7mm" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;develop__LeDienTrungDung&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Chung Van/Intership/Course Management&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.CommonServiceApplication.executor": "Run",
+    "Application.UserServiceApplication.executor": "Run",
+    "Maven.user-service [clean].executor": "Run",
+    "Maven.user-service [install].executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "Merging develop__common__message__validation",
+    "kotlin-language-version-configured": "true"
   }
-}</component>
+}]]></component>
+  <component name="RunManager">
+    <configuration name="UserServiceApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.devnest.user.UserServiceApplication" />
+      <module name="user-service" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.devnest.user.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.UserServiceApplication" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="75d2bf9a-c491-4d20-8213-4aad79ec80ac" name="Changes" comment="" />
-      <created>1740451579679</created>
+      <changelist id="06e3bd83-0701-41c3-a511-6c79e7b9c842" name="Changes" comment="" />
+      <created>1741071620848</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1740451579679</updated>
+      <updated>1741071620848</updated>
     </task>
     <servers />
   </component>
