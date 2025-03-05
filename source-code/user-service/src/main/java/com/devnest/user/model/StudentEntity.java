@@ -1,7 +1,8 @@
-package com.devnest.database.model;
+package com.devnest.user.model;
 
 import java.util.Date;
 
+import com.devnest.user.model.AbstractEntity;
 import com.devnest.user.model.StudentAccountEntity;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
@@ -14,7 +15,6 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.FieldDefaults;
-import com.devnest.database.model.AbstractEntity;
 
 
 @Getter

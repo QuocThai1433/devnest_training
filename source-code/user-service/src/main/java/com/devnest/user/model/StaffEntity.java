@@ -7,7 +7,6 @@ import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
-import com.devnest.database.model.AbstractEntity;
 
 
 @Getter

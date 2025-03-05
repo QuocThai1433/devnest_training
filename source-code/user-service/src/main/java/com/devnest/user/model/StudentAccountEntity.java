@@ -15,11 +15,11 @@ import lombok.experimental.FieldDefaults;
 @AllArgsConstructor
 @Table(name = "tbl_student_account")
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class StudentAccountEntity extends com.devnest.database.model.AbstractEntity<Long> {
+public class StudentAccountEntity extends AbstractEntity<Long> {
 
     @OneToOne
     @JoinColumn(name = "student_id", nullable = false)
-    com.devnest.database.model.StudentEntity studentEntity;
+    StudentEntity studentEntity;
 
     @Column(name = "login_name", length = 50, nullable = false)
     String loginName;

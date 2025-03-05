@@ -1,7 +1,7 @@
 package com.devnest.user.mapper;
 
 import com.devnest.user.dto.StudentDTO;
-import com.devnest.database.model.StudentEntity;
+import com.devnest.user.model.StudentEntity;
 import org.mapstruct.Mapper;
 
 @Mapper(componentModel = "spring")

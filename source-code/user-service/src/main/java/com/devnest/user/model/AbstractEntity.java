@@ -1,4 +1,4 @@
-package com.devnest.database.model;
+package com.devnest.user.model;
 
 
 import java.util.Date;
