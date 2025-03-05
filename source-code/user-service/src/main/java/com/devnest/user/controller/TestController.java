@@ -8,9 +8,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.devnest.common.config.Translator;
-import com.devnest.user.dto.request.TestRequest;
-
 import jakarta.validation.Valid;
 
 @RestController
@@ -18,10 +15,5 @@ import jakarta.validation.Valid;
 @RequiredArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE,makeFinal = true)
 public class TestController {
-    Translator translator;
 
-    @PostMapping
-    public String get(@RequestBody @Valid TestRequest request) {
-        return translator.toLocale("user.add.success");
-    }
 }
