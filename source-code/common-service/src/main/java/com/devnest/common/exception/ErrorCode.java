@@ -42,6 +42,6 @@ public enum ErrorCode {
     MISSING_REQUIRED_FIELD("missing.required.field", 4003),
     INVALID_DATA_FORMAT("invalid.data.format", 4004);
     
-    private final String messageKey;
+    private final String message;
     private final int code;
 }

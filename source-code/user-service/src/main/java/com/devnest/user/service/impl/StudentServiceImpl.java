@@ -1,6 +1,7 @@
 package com.devnest.user.service.impl;
 
-import com.devnest.user.repository.StudentRepository;
+import com.devnest.database.user.repository.StudentRepository;
+//import com.devnest.user.repository.StudentRepository;
 import com.devnest.user.service.StudentService;
 import org.springframework.stereotype.Service;
 

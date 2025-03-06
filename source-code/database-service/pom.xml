@@ -8,7 +8,7 @@
 		<version>3.4.3</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.devnest</groupId>
+	<groupId>com.devnest.database</groupId>
 	<artifactId>database-service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>database-service</name>
@@ -34,7 +34,14 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
 		</dependency>
-
+		<dependency>
+			<groupId>org.flywaydb</groupId>
+			<artifactId>flyway-core</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.flywaydb</groupId>
+			<artifactId>flyway-database-postgresql</artifactId>
+		</dependency>
 		<dependency>
 			<groupId>org.flywaydb</groupId>
 			<artifactId>flyway-core</artifactId>
@@ -86,6 +93,30 @@
 				</configuration>
 			</plugin>
 			<plugin>
+				<groupId>com.devnest.database</groupId>
+				<artifactId>database-service</artifactId>
+				<version>0.0.1-SNAPSHOT</version>
+
+			</plugin>
+			<plugin>
+				<groupId>org.flywaydb</groupId>
+				<artifactId>flyway-maven-plugin</artifactId>
+				<configuration>
+					<url>jdbc:postgresql://localhost:5432/database-service</url>
+					<user>postgres</user>
+					<password>postgres</password>
+					<schemas>public</schemas>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<classifier>exec</classifier>
+				</configuration>
+			</plugin>
+
+			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
@@ -97,16 +128,7 @@
 					</excludes>
 				</configuration>
 			</plugin>
-			<plugin>
-				<groupId>org.flywaydb</groupId>
-				<artifactId>flyway-maven-plugin</artifactId>
-				<configuration>
-					<url>jdbc:postgresql://localhost:5432/course-management</url>
-					<user>postgres</user>
-					<password>postgres</password>
-					<schemas>public</schemas>
-				</configuration>
-			</plugin>
+
 		</plugins>
 	</build>
 

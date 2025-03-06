@@ -1,13 +1,13 @@
 package com.devnest.user.service.impl;
-import com.devnest.user.repository.TeacherRepsitory;
+import com.devnest.database.user.repository.TeacherRepository;
 import com.devnest.user.service.TeacherService;
 import org.springframework.stereotype.Service;
 
 @Service
 public class TeacherServiceImpl implements TeacherService {
-     public  final TeacherRepsitory repository;
+     public  final TeacherRepository repository;
 
-    public TeacherServiceImpl(TeacherRepsitory repository) {
+    public TeacherServiceImpl(TeacherRepository repository) {
         this.repository = repository;
     }
 

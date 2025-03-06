@@ -1,1 +1,0 @@
-package com.devnest.user.model;

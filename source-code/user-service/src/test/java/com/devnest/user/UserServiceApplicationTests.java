@@ -7,9 +7,6 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @SpringBootTest
-@EnableJpaRepositories("my.package.base.*")
-@ComponentScan(basePackages = { "my.package.base.*" })
-@EntityScan("my.package.base.*")
 class UserServiceApplicationTests {
 
 	@Test
